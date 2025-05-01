@@ -42,8 +42,7 @@ const server = http.createServer((req, res) => {
           res.end('404 - Not Found');
       }
     }
-
-    // Handle POST request to add an item
+      
     else if (req.method === 'POST') {
       switch (path) {
         case '/movies':
