@@ -20,7 +20,6 @@ const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
     const path = parsedUrl.pathname;
 
-    // Handle GET request for /movies, /series, /songs
     if (req.method === 'GET') {
       switch (path) {
         case '/movies':
@@ -73,8 +72,7 @@ const server = http.createServer((req, res) => {
           res.end('404 - Not Found');
       }
     }
-
-    // Handle DELETE request to remove an item
+      
     else if (req.method === 'DELETE') {
       const query = parsedUrl.query;
       const title = query.title;
@@ -109,8 +107,7 @@ const server = http.createServer((req, res) => {
           res.end('404 - Not Found');
       }
     }
-
-    // Handle PUT request to update an item
+      
     else if (req.method === 'PUT') {
       const updatedItem = JSON.parse(buffer);
       const title = updatedItem.title;
@@ -152,7 +149,6 @@ const server = http.createServer((req, res) => {
       }
     }
 
-    // Return 404 for any unsupported routes or methods
     else {
       res.writeHead(404);
       res.end('404 - Not Found');
