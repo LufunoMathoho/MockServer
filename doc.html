@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media Library API</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; line-height: 1.6; }
+    h1 { color: #333; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>📚 Media Library API</h1>
+  <p>This API allows you to <strong>view, add, update, and delete</strong> media items like movies, series, and songs.</p>
+
+  <h2>Endpoints:</h2>
+  <ul>
+    <li><code>GET /movies</code> – Get all movies</li>
+    <li><code>GET /series</code> – Get all series</li>
+    <li><code>GET /songs</code> – Get all songs</li>
+    <li><code>POST /movies</code>, <code>/series</code>, <code>/songs</code> – Add a new item</li>
+    <li><code>PUT /movies</code>, <code>/series</code>, <code>/songs</code> – Update an item by title</li>
+    <li><code>DELETE /movies?title=Inception</code> – Delete an item by title</li>
+  </ul>
+
+  <h2>Request Body Format (JSON)</h2>
+  <p><strong>POST / PUT body example:</strong></p>
+  <pre>
+{
+  "title": "Inception",
+  "genre": "Sci-Fi",
+  "year": 2010
+}
+  </pre>
+
+  <h2>Notes:</h2>
+  <ul>
+    <li><code>title</code> is required for updating or deleting an item.</li>
+    <li>All data is stored in <code>mediaLibrary.json</code>.</li>
+  </ul>
+</body>
+</html>
